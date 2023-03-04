@@ -1,0 +1,278 @@
+; """
+; Set mesh path to load
+;	v: mesh_file_full_path: str: full path to mesh file
+; """
+
+file/read-case "fake/path/to/msh "
+q q q q q q
+
+; Turn energy equation on
+/define/models/energy
+yes
+yes
+yes
+q q q q q
+
+; Density based solver
+/define/models/solver/density-based-implicit
+yes
+q q q q q q q
+
+; Setup air as ideal-gas
+define/materials/change-create/
+air
+air
+yes
+ideal-gas
+no
+no
+yes
+sutherland
+three-coefficient-method
+
+; Sets up turbulence model as inviscid
+/define/models/viscous/inviscid
+yes
+q q q q q q q
+
+
+; """
+; Setup for the free-stream conditions for a 3D domain
+; Variables:
+;	v: mach_number: float: flight mach number
+;	v: temperature: float: flight temperature
+;	v: pressure: float: flight pressure
+;	v: x_component: float: x_velocity component
+;	v: y_component: float: y_velocity_component
+;	v: z_component: float: z_velocity_components
+; """
+
+
+; Define pressure-dar field boundary condition
+define/boundary-conditions/pressure-far-field
+
+no
+0
+no
+1.5
+no
+288.15
+yes
+no
+1.0
+no
+0.0
+no
+0.0
+
+q q q q q q
+
+; Define pressure-outlet boundary condition
+define/boundary-conditions/pressure-outlet
+
+yes
+no
+0
+no
+288.15
+no
+yes
+no
+no
+yes
+
+
+; Define operating conditions
+/define/operating-conditions/operating-pressure
+101325.0
+; """
+; Sets the export files for the case files
+; """
+
+
+
+q q q q q q 
+
+file/data-file-options
+
+pressure
+
+total-temperature
+mach-number
+dynamic-pressure
+wall-temperature
+cell-wall-distance
+density
+pressure-coefficient
+
+wall-shear
+y-plus
+
+viscosity-eff
+viscosity-lam
+viscosity-ratio
+viscosity-turb
+
+q q q q q q 
+
+; """
+; Performs standard initialization 
+; """
+
+solve/initialize/compute-defaults
+
+pressure-far-field
+pressure-far-field
+
+q q q q q q
+
+
+
+solve/initialize/initialize-flow
+
+
+
+q q q q q q
+; """
+; Set number of iterations, and begin a solver run
+;	v: iterations: int: number of iterations to run solver
+; """
+
+
+solve/iterate
+1000
+; """
+; Writes a case and data file
+;	v: export_file_path: str: path to export file
+; """
+
+file/write-case-data
+output_path/case_0.cas
+; """
+; Setup for the free-stream conditions for a 3D domain
+; Variables:
+;	v: mach_number: float: flight mach number
+;	v: temperature: float: flight temperature
+;	v: pressure: float: flight pressure
+;	v: x_component: float: x_velocity component
+;	v: y_component: float: y_velocity_component
+;	v: z_component: float: z_velocity_components
+; """
+
+
+; Define pressure-dar field boundary condition
+define/boundary-conditions/pressure-far-field
+
+no
+0
+no
+1.5
+no
+288.15
+yes
+no
+1.0
+no
+0.0
+no
+0.0
+
+q q q q q q
+
+; Define pressure-outlet boundary condition
+define/boundary-conditions/pressure-outlet
+
+yes
+no
+0
+no
+288.15
+no
+yes
+no
+no
+yes
+
+
+; Define operating conditions
+/define/operating-conditions/operating-pressure
+101325.0
+; """
+; Set number of iterations, and begin a solver run
+;	v: iterations: int: number of iterations to run solver
+; """
+
+
+solve/iterate
+1000
+; """
+; Writes a case and data file
+;	v: export_file_path: str: path to export file
+; """
+
+file/write-case-data
+output_path/case_1.cas
+; """
+; Setup for the free-stream conditions for a 3D domain
+; Variables:
+;	v: mach_number: float: flight mach number
+;	v: temperature: float: flight temperature
+;	v: pressure: float: flight pressure
+;	v: x_component: float: x_velocity component
+;	v: y_component: float: y_velocity_component
+;	v: z_component: float: z_velocity_components
+; """
+
+
+; Define pressure-dar field boundary condition
+define/boundary-conditions/pressure-far-field
+
+no
+0
+no
+1.5
+no
+288.15
+yes
+no
+1.0
+no
+0.0
+no
+0.0
+
+q q q q q q
+
+; Define pressure-outlet boundary condition
+define/boundary-conditions/pressure-outlet
+
+yes
+no
+0
+no
+288.15
+no
+yes
+no
+no
+yes
+
+
+; Define operating conditions
+/define/operating-conditions/operating-pressure
+101325.0
+; """
+; Set number of iterations, and begin a solver run
+;	v: iterations: int: number of iterations to run solver
+; """
+
+
+solve/iterate
+1000
+; """
+; Writes a case and data file
+;	v: export_file_path: str: path to export file
+; """
+
+file/write-case-data
+output_path/case_2.cas

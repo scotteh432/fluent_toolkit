@@ -1,0 +1,7 @@
+; """
+; Writes a case and data file
+;	v: export_file_path: str: path to export file
+; """
+
+file/write-case-data
+{{ export_file_path }}

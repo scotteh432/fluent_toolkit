@@ -1,0 +1,23 @@
+
+              Welcome to ANSYS Fluent 2021 R1
+
+              Copyright 1987-2021 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Nov 20 2020 15:49:41 EST  Build Id: 10179  
+ 
+
+ANSYS LICENSE MANAGER ERROR:Failover feature 'CFD Solver - Level 2' is not available.
+Request name cfd_solve_level2 does not exist in the licensing pool.
+License server machine is down or not responding.
+ See the system administrator about starting the license server system, or
+ make sure you're referring to the right host (see LM_LICENSE_FILE).
+Feature:       cfd_solve_level2
+Hostname:      C6Server1.c6launch.net
+License path:  1055@C6Server1.c6launch.net;
+FlexNet Licensing error:-96,7.  System Error: 11001 "WinSock: Host not found (HOST_NOT_FOUND)"
+
+
+Unexpected license problem; exiting.

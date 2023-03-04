@@ -1,0 +1,30 @@
+; """
+; Sets the export files for the case files
+; """
+
+
+
+q q q q q q 
+
+file/data-file-options
+
+pressure
+
+total-temperature
+mach-number
+dynamic-pressure
+wall-temperature
+cell-wall-distance
+density
+pressure-coefficient
+
+wall-shear
+y-plus
+
+viscosity-eff
+viscosity-lam
+viscosity-ratio
+viscosity-turb
+
+q q q q q q 
+

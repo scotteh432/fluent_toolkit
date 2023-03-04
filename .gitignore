@@ -1,0 +1,4 @@
+.idea
+.venv
+.pytest_cache
+fluent_toolkit.egg-info

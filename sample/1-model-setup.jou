@@ -1,0 +1,38 @@
+; """
+; Set mesh path to load
+;	v: mesh_file_full_path: str: full path to mesh file
+; """
+
+file/read-case "{{ mesh_file_full_path}} "
+q q q q q q
+
+; Turn energy equation on
+/define/models/energy
+yes
+yes
+yes
+q q q q q
+
+; Density based solver
+/define/models/solver/density-based-implicit
+yes
+q q q q q q q
+
+; Setup air as ideal-gas
+define/materials/change-create/
+air
+air
+yes
+ideal-gas
+no
+no
+yes
+sutherland
+three-coefficient-method
+
+; Sets up turbulence model as inviscid
+/define/models/viscous/inviscid
+yes
+q q q q q q q
+
+

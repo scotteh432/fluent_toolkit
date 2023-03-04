@@ -1,0 +1,49 @@
+; """
+; Setup for the free-stream conditions for a 3D domain
+; Variables:
+;	v: mach_number: float: flight mach number
+;	v: temperature: float: flight temperature
+;	v: pressure: float: flight pressure
+;	v: x_component: float: x_velocity component
+;	v: y_component: float: y_velocity_component
+;	v: z_component: float: z_velocity_components
+; """
+
+
+; Define pressure-dar field boundary condition
+define/boundary-conditions/pressure-far-field
+
+no
+0
+no
+{{ mach_number }}
+no
+{{ temperature }}
+yes
+no
+{{ x_component }}
+no
+{{ y_component }}
+no
+{{ z_component }}
+
+q q q q q q
+
+; Define pressure-outlet boundary condition
+define/boundary-conditions/pressure-outlet
+
+yes
+no
+0
+no
+{{ temperature }}
+no
+yes
+no
+no
+yes
+
+
+; Define operating conditions
+/define/operating-conditions/operating-pressure
+{{ pressure }}

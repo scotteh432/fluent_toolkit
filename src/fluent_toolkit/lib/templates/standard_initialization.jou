@@ -1,0 +1,18 @@
+; """
+; Performs standard initialization 
+; """
+
+solve/initialize/compute-defaults
+
+pressure-far-field
+pressure-far-field
+
+q q q q q q
+
+
+
+solve/initialize/initialize-flow
+
+
+
+q q q q q q

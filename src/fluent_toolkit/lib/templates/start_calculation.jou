@@ -1,0 +1,8 @@
+; """
+; Set number of iterations, and begin a solver run
+;	v: iterations: int: number of iterations to run solver
+; """
+
+
+solve/iterate
+{{ iterations }}
